@@ -1,5 +1,5 @@
 body {
-  background-color: #7c838e
+  background-color: #fffef7;
 }
 
 .global {
@@ -13,14 +13,14 @@ body {
   width: 49%;
   float:left;
   margin-right: 1px;
-  color: black
 }
 
 .markzone {
-  background-color: white;
+  background-color: #fffefc !important;
   width: 49%;
-  height: 984px;
+  height: 1224px;
   left: 50%;
   margin-left: 1px;
   position: absolute;
+  overflow: scroll;
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import TextField from 'material-ui/TextField'
 import { markdown } from 'markdown-js'
+import {Card, CardText} from 'material-ui/Card'
 
 class Field extends React.Component {
   constructor () {
@@ -12,25 +13,28 @@ class Field extends React.Component {
     this.setState({ text: e.target.value })
   }
   render () {
-    var test
-    test = markdown(this.state.text)
-    console.log(test)
     return (
       <div className='global'>
         <div className='textzone'>
-          <TextField
-            id='text'
-            multiLine={true}
-            fullWidth={true}
-            rows={40}
-            rowsMax={50}
-            style={{backgroundColor: 'white'}}
-            value={this.state.text}
-            onChange={this.handleText}
-          />
+          <Card>
+            <TextField
+              id='text'
+              multiLine={true}
+              fullWidth={true}
+              rows={50}
+              rowsMax={50}
+              style={{backgroundColor: '#fffefc'}}
+              value={this.state.text}
+              onChange={this.handleText}
+            />
+          </Card>
         </div>
-        <div className='markzone'>
-          <div dangerouslySetInnerHTML={{ __html: markdown(this.state.text) }} />
+        <div>
+          <Card className='markzone'>
+            <CardText>
+              <p dangerouslySetInnerHTML={{ __html: markdown(this.state.text) }} />
+            </CardText>
+          </Card>
         </div>
       </div>
     )
